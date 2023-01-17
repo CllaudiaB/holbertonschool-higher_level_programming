@@ -10,3 +10,5 @@ def uppercase(str):
                 print("{:s}".format(l))
             else:
                 print("{:s}".format(l), end='')
+        else:
+            return str
