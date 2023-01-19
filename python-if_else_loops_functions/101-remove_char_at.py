@@ -6,4 +6,4 @@ def remove_char_at(str, n):
             print("{}".format(str[i]), end='')
         else:
             continue
-    return(" ")
+    return("")
