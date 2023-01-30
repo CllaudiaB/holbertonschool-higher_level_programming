@@ -6,7 +6,7 @@ Defines a square
 
 class Square:
     """
-    That defines a square by: (based on 2-square.py)
+    That defines a square by: based on 2-square.py
     """
     def __init__(self, size=0):
         self.__size = size
