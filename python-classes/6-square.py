@@ -23,12 +23,12 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-        def area(self):
-            """
-            Return the current square area
-            """
-            square_area = self.__size
-            return square_area * square_area
+    def area(self):
+        """
+        Return the current square area
+        """
+        square_area = self.__size
+        return square_area * square_area
 
     @property
     def position(self):
@@ -47,15 +47,15 @@ class Square:
         self.__position = value
 
     def my_print(self):
-        if self.size == 0:
+        if self.__size == 0:
             print()
         else:
-            for i in range(self.position[1]):
+            for i in range(self.__position[1]):
                 print()
 
-            for i in range(self.size):
-                for j in range(self.position[0]):
+            for i in range(self.__size):
+                for j in range(self.__position[0]):
                     print(' ', end='')
-                for k in range(self.size):
+                for k in range(self.__size):
                     print('#', end='')
                 print()
