@@ -3,6 +3,7 @@
 Defines a square
 """
 
+
 class Square:
     """
     That defines a square by: based on 1-square.py
