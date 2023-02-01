@@ -23,4 +23,4 @@ TypeError: last_name must be a string
 
 >>> say_my_name()
 Traceback (most recent call last):
-TypeError: first_name must be a string and last_name must be a string
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
