@@ -2,6 +2,8 @@
 """
 Divide a matrix
 """
+
+
 def matrix_divided(matrix, div):
     """ div matrix """
     new = []
@@ -15,10 +17,10 @@ positional arguments: 'matrix' and 'div'")
         for j in row:
             if not isinstance(j, int) and not isinstance(j, float):
                 raise TypeError("matrix must be a matrix (list of lists)\
-of integers/floats")
+ of integers/floats")
     if len(matrix) == 0 or len(matrix[0]) == 0:
         raise TypeError("matrix must be a matrix (list of lists) of \
-integers/floats")
+ integers/floats")
     if div == 0:
         raise ZeroDivisionError('division by zero')
     if type(div) is not int and type(div) is not float:
