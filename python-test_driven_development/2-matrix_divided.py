@@ -20,7 +20,7 @@ positional arguments: 'matrix' and 'div'")
  of integers/floats")
     if len(matrix) == 0 or len(matrix[0]) == 0:
         raise TypeError("matrix must be a matrix (list of lists) of \
- integers/floats")
+integers/floats")
     if div == 0:
         raise ZeroDivisionError('division by zero')
     if type(div) is not int and type(div) is not float:
