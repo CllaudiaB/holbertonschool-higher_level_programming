@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+0;10;1c"""
 Eval is magic
 """
 
@@ -54,7 +54,7 @@ class Rectangle:
             for j in range(self.__width):
                 rectangle += '#'
             rectangle += '\n'
-        return rectangle[:-2]
+        return rectangle[:-1]
 
     def __repr__(self):
-        return "Rectangle ({}, {})".format(self.__width, self.__height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)
