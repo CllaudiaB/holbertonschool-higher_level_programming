@@ -1,0 +1,17 @@
+"""
+Test text indentation
+"""
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Lorem ipsum dolor sit amet. Quonam modo? Fortasse id optimum, sed ubi illud:") 
+Lorem ipsum dolor sit amet.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Fortasse id optimum, sed ubi illud:
+<BLANKLINE>
+
+>>> text_indentation(123456789)
+Traceback (most recent call last):
+TypeError: text must be a string
