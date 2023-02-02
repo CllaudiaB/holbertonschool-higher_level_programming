@@ -2,6 +2,8 @@
 """
 Real definition of a rectangle
 """
+
+
 class Rectangle:
     """
      That defines a rectangle by: based on 0-rectangle.py
@@ -9,7 +11,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         self.__width = width
-        self.__heihgt = height
+        self.__height = height
 
     @property
     def width(self):
