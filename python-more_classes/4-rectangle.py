@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-0;10;1c"""
+"""
 Eval is magic
 """
 
