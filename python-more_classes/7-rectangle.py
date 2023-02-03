@@ -6,7 +6,7 @@ Change representation
 
 class Rectangle:
     """
-    That defines a rectangle by: based on 4-rectangle.py and return area \
+    That defines a rectangle by: based on 6-rectangle.py and return area \
     and perimeter and print the rectangle with character #
     Print the message Bye rectangle... (... being 3 dots not ellipsis) when \
     an instance of Rectangle is deleted
