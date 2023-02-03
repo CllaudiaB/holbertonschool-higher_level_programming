@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-How many instances
+Change representation
 """
 
 
@@ -58,7 +58,7 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 rectangle += str(self.print_symbol)
-                rectangle += '\n'
+            rectangle += '\n'
         return rectangle[:-1]
 
     def __repr__(self):
