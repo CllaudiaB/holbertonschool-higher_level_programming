@@ -46,6 +46,7 @@ class Rectangle:
     def area(self):
         return self.__width * self.__height
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if isinstance(rect_1, Rectangle)is False:
             raise TypeError("rect_1 must be an instance of Rectangle")
