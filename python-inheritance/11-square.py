@@ -13,6 +13,7 @@ class Squrae(Rectangle):
     implemented, print() should print, and str() should return, the square \
     description: [Square] <width>/<height>
     """
+
     def __init__(self, size):
         self.__size = size
         self.integer_validator("size", size)
