@@ -7,11 +7,9 @@ Square #2
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Squrae(Rectangle):
+class Squar(Rectangle):
     """
-    Class Square that inherits from Rectangle, the area() method must be \
-    implemented, print() should print, and str() should return, the square \
-    description: [Square] <width>/<height>
+    Class Square that inherits from Rectangle
     """
 
     def __init__(self, size):
@@ -23,4 +21,4 @@ class Squrae(Rectangle):
         return self.__size * self.__size
 
     def __str__(self):
-        return "[Sqaure] {}/{}".format(self.__size, self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
