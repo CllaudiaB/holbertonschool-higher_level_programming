@@ -7,7 +7,7 @@ Square #2
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Squar(Rectangle):
+class Square(Rectangle):
     """
     Class Square that inherits from Rectangle
     """
