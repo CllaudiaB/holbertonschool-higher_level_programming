@@ -9,7 +9,9 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 class Squrae(Rectangle):
     """
-    Class Square
+    Class Square that inherits from Rectangle, the area() method must be \
+    implemented, print() should print, and str() should return, the square \
+    description: [Square] <width>/<height>
     """
     def __init__(self, size):
         self.__size = size
