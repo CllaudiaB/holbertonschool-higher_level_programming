@@ -7,7 +7,6 @@ Full rectangle
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-
 class Rectangle(BaseGeometry):
     """
     Write a class Rectangle that inherits from BaseGeometry
