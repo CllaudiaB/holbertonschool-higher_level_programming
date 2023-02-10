@@ -4,7 +4,7 @@ Student to JSON with filter
 """
 
 
-class Stude:
+class Student():
     """
     Class Student that defines a student by: based on 9-student.py
     """
