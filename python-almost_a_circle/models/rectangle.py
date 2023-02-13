@@ -74,10 +74,10 @@ class Rectangle(Base):
         """
         That prints in stdout the Rectangle instance with the character #
         """
-        for i in range(self.__x):
+        for i in range(self.__y):
             print()
         for i in range(self.__height):
-            for j in range(self.__y):
+            for j in range(self.__x):
                 print(' ', end='')
             for k in range(self.__width):
                 print('#', end='')
