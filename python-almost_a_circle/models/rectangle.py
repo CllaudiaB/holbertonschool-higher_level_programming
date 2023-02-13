@@ -105,5 +105,5 @@ class Rectangle(Base):
                 self.height = v
             if i == 3:
                 self.x = v
-            if i == 4
+            if i == 4:
                 self.y = v
