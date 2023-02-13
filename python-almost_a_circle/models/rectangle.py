@@ -5,7 +5,6 @@ First Rectangle
 from models.base import Base
 
 
-
 class Rectangle(Base):
     """
     Write the class Rectangle that inherits from Base
