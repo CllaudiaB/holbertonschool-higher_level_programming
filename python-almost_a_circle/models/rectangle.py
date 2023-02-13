@@ -96,8 +96,14 @@ class Rectangle(Base):
         """
         That assigns an argument to each attribute
         """
-        self.id = args[0]
-        self.width = args[1]
-        self.height = args[2]
-        self.x = args[3]
-        self.y = args[4]
+        for i, v in enumerate(args):
+            if i == 0:
+                self.id = v
+            if i == 1:
+                self.width = v
+            if i == 2:
+                self.height = v
+            if i == 3:
+                self.x = v
+            if i == 4
+                self.y = v
