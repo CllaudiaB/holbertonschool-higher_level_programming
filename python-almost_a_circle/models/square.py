@@ -38,7 +38,7 @@ class Square(Rectangle):
                     self.size = v
                 if i == 2:
                     self.x = v
-                if i == 4:
+                if i == 3:
                     self.y = v
         else:
             for key, value in kwargs.items():
