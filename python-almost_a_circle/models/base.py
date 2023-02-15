@@ -57,7 +57,7 @@ class Base:
         """
         That returns an instance with all attributes already set
         """
-        if 'rectangle' in cls.__name__.lower():
+        if cls.__name__ == "Rectangle":
             r = cls(4, 4)
         else:
             r = cls(4)
