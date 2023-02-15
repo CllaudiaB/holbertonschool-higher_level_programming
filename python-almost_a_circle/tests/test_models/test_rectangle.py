@@ -71,6 +71,16 @@ class Test_Rectangle(unittest.TestCase):
 
         self.assertEqual(str(cm.exception), "y must be >= 0")
 
+        with self.assertRaises(ValueError) as cm:
+            r1 = Rectangle(0, 2)
+
+        self.assertEqual(str(cm.exception), "width must be > 0")
+
+        with self.assertRaises(ValueError) as cm:
+            r1 = Rectangle(1, 0)
+
+        self.assertEqual(str(cm.exception), "height must be > 0")
+
     def test_area(self):
         """
         Test area
