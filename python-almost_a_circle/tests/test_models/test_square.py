@@ -62,3 +62,29 @@ class Test_Square(unittest.TestCase):
         with self.assertRaises(ValueError) as cm:
             s1 = Square(0)
         self.assertEqual(str(cm.exception), "width must be > 0")
+
+    def test_str(self):
+        """
+        Test str
+        """
+        s = Square(8, 6, 4, 18)
+        self.assertEqual(str(s), "[Square] (18) 6/4 - 8")
+
+    def test_dictionary(self):
+        """
+        Test dictionary
+        """
+        s = Square(8, 6, 4, 18)
+        self.assertEqual(s.to_dictionary(), {"id": 18, "size": 8, "x": 6,
+                                             "y": 4})
+
+    def test_update(self):
+        """
+        Test update
+        """
+        s = Square(8, 6, 4, 18)
+        s.update(15, 3, 3, 3)
+        self.assertEqual(s.id, 15)
+        self.assertEqual(s.size, 3)
+        self.assertEqual(s.x, 3)
+        self.assertEqual(s.y, 3)
