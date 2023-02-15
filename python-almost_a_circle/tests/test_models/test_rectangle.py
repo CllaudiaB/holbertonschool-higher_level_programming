@@ -19,6 +19,9 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r.height, 6)
         self.assertEqual(r.x, 4)
         self.assertEqual(r.y, 2)
+        r = Rectangle(1, 2)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
 
     def test_type_error_init(self):
         """
