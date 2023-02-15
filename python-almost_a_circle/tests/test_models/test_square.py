@@ -21,3 +21,8 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(s.size, 1)
         self.assertEqual(s.x, 2)
         self.assertEqual(s.y, 3)
+        s = Square(1)
+        self.assertEqual(s.size, 1)
+        s = Square(1, 2)
+        self.assertEqual(s.size, 1)
+        self.assertEqual(s.x, 2)
