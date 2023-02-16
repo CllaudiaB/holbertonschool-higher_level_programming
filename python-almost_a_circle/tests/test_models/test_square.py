@@ -3,6 +3,7 @@
 Test square
 """
 import unittest
+import os
 from models.square import Square
 from models.base import Base
 
@@ -88,3 +89,64 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(s.size, 3)
         self.assertEqual(s.x, 3)
         self.assertEqual(s.y, 3)
+
+    def test_create_square(self):
+        """
+        Test create square
+        """
+        r = Square.create(**{'id': 5, 'width': 1,
+                             'x': 4, 'y': 5})
+        answer = Square(4, 4, 5, 5)
+        self.assertEqual(str(r), str(answer))
+
+        r = Square.create(**{'id': 89, 'width': 1,
+                             'x': 3})
+        answer = Square(4, 3, 0, 89)
+        self.assertEqual(str(r), str(answer))
+
+        r = Square.create(**{'id': 89, 'width': 1})
+        answer = Square(4, 0, 0, 89)
+        self.assertEqual(str(r), str(answer))
+
+
+    def test_save_to_file(self):
+        """
+        Test save file
+        """
+        s = Square(8, 0, 0, 18)
+        Square.save_to_file([s])
+        with open("Square.json", "r") as f:
+            data_read = f.read()
+        expect_output = '[{"id": 18, "size": 8, "x": 0, "y": 0}]'
+        self.assertEqual(data_read, expect_output)
+        os.remove("Square.json")
+
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            data_read = f.read()
+        expect_output = '[]'
+        self.assertEqual(data_read, expect_output)
+        os.remove("Square.json")
+
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            data_read = f.read()
+        expect_output = '[]'
+        self.assertEqual(data_read, expect_output)
+        os.remove("Square.json")
+
+
+    def test_load_to_file(self):
+        """
+        Test load file
+        """
+        s1 = Square(8)
+        Square.save_to_file([s1])
+        squares = Square.load_from_file()
+        self.assertIsInstance(squares[0], Square)
+        self.assertEqual(squares[0].width, 8)
+        os.remove("Square.json")
+
+        s = Square.load_from_file()
+        self.assertTrue(isinstance(s, list))
+        self.assertEqual(s, [])
