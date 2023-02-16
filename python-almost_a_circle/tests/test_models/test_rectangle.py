@@ -3,6 +3,7 @@
 Test rectangle
 """
 import unittest
+import os
 from models.rectangle import Rectangle
 from models.base import Base
 from io import StringIO
@@ -126,6 +127,63 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r.y, 10)
 
     def test_dictionary(self):
+        """
+        Test dictionary
+        """
         r = Rectangle(8, 6, 4, 2, 18)
         self.assertEqual(r.to_dictionary(), { "id": 18, "width": 8, "height": 6,
                                            "x": 4, "y": 2})
+
+    def test_create(self):
+        """
+        Test create
+        """
+        r = Rectangle.create(**{"id": 18, "width": 8, "height": 6,
+                                                   "x": 4, "y": 2})
+        res = Rectangle(8, 6, 4, 2, 18)
+        self.assertEqual(str(r), str(res))
+
+        r = Rectangle.create(**{"id": 18, "width": 8, "height": 6})
+        res = Rectangle(8, 6, 0, 0, 18)
+        self.assertEqual(str(r), str(res))
+
+        r = Rectangle.create(**{"id": 18, "width": 8,
+                                                 "height": 6, "x": 4})
+        res = Rectangle(8, 6, 4, 0, 18)
+        self.assertEqual(str(r), str(res))
+
+
+    def test_save_to_file(self):
+        """
+        Test save file
+        """
+        r = Rectangle(2, 4, 0, 0, 18)
+        Rectangle.save_to_file([r])
+        with open("Rectangle.json", "r") as f:
+            data_read = f.read()
+        expect_output = '[{"id": 18, "width": 2, "height": 4, "x": 0, "y": 0}]'
+        self.assertEqual(data_read, expect_output)
+        f.close()
+
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            read_data = f.read()
+        expect_output = '[]'
+        self.assertEqual(read_data, expect_output)
+        f.close()
+
+    def test_load_from_file(self):
+        """
+        Test load file
+        """
+        r1 = Rectangle(4, 6)
+        Rectangle.save_to_file([r1])
+        rectangles = Rectangle.load_from_file()
+        self.assertIsInstance(rectangles[0], Rectangle)
+        self.assertEqual(rectangles[0].width, 4)
+        self.assertEqual(rectangles[0].height, 6)
+        os.remove("Rectangle.json")
+
+        r = Rectangle.load_from_file()
+        self.assertTrue(isinstance(r, list))
+        self.assertEqual(r, [])
