@@ -177,7 +177,7 @@ class Test_Rectangle(unittest.TestCase):
             read_data = f.read()
         expect_output = '[]'
         self.assertEqual(read_data, expect_output)
-        f.close()
+        os.remove("Rectangle.json")
 
     def test_load_from_file(self):
         """
