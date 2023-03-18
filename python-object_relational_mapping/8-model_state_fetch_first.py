@@ -14,7 +14,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).first()
-    if state == '':
+    if not state:
         print("Nothing")
     else:
         print("{}: {}".format(state.id, state.name))
