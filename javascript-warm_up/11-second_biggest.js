@@ -11,8 +11,10 @@ if (args[2] === null || args[2] === 1) {
     if (args[i] > firstBiggest) {
       firstBiggest = args[i];
     }
-    if (args[i] !== firstBiggest && args[i] > secondBiggest) {
-      secondBiggest = args[i];
+  }
+  for (let j = 3; j < args.length; j++) {
+    if (args[j] < firstBiggest && args[j] > secondBiggest) {
+      secondBiggest = args[j];
     }
   }
   console.log(secondBiggest);
