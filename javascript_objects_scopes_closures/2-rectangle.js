@@ -6,9 +6,9 @@ class Rectangle {
       this.width = w;
       this.height = h;
     } else {
-        this.width;
-	this.height;
-      }
+      this.width;
+      this.height;
+    }
   }
 }
 
