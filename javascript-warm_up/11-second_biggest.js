@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-let args = process.argv.splice(2);
-let list = [];
+const args = process.argv.splice(2);
+const list = [];
 for (let i = 0; i < args.length; i++) {
   list.push(parseInt(args[i]));
 }
@@ -9,7 +9,7 @@ for (let i = 0; i < args.length; i++) {
 let firstBiggest = 1;
 let secondBiggest = 1;
 
-if(args.length <= 1) {
+if (args.length <= 1) {
   console.log('0');
 } else {
   for (let i = 0; i <= list.length; i++) {
@@ -22,5 +22,5 @@ if(args.length <= 1) {
       secondBiggest = list[i];
     }
   }
-    console.log(secondBiggest);
+  console.log(secondBiggest);
 }
