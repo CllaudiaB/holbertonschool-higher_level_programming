@@ -1,7 +1,12 @@
 #!/usr/bin/node
 
-require('fetch');
-fetch(process.argv[2])
-  .then(response => {
-      console.log(response.status);
-  });
+const request = require('request');
+const url = process.argv[2];
+
+request(url, (error, response) => {
+  if (error) {
+    console.error(error);
+    return;
+  }
+  console.log(`code: ${response.statusCode}`);
+});
