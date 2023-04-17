@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
 const request = require('request');
-const arg = process.argv[2];
 
-request(String(arg))
+request
+  .get(process.argv[2])
   .on('response', function (response) {
     console.log('code: ' + response.statusCode);
   })
