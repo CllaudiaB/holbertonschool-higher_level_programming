@@ -4,7 +4,7 @@ const request = require('request');
 let count = 0;
 
 request({
-  url: 'https://swapi-api.hbtn.io/api/films/',
+  url: process.argv[2],
   json: true
 }, (err, response, body) => {
   if (err) {
