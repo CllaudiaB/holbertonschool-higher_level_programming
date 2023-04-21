@@ -10,7 +10,7 @@ request({
   if (err) {
     console.log('Error:', err);
   }
-for (let i = 1; i < body.length; i++) {
+for (let i = 0; i < body.length; i++) {
     if (body[i].completed == true) {
       if (myDict[body[i].userId] === undefined) {
         myDict[body[i].userId] = 0;
